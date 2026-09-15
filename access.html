@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>06 · Доступність — Граматика інтерфейсу</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="access.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Перейти до основного вмісту</a>
+
+<nav class="ac-nav"><a href="index.html">До каталогу</a></nav>
+
+<header class="ac-head">
+  <h1>Доступний дизайн не прикрашає. Він працює для всіх однаково.</h1>
+  <p>Ця сторінка навмисно без декоративного шрифту й м'яких напівтонів: великий розмір тексту, чіткий фокус для клавіатури, контраст, який відповідає стандарту WCAG AA.</p>
+</header>
+
+<main id="main" class="ac-main">
+
+  <section class="ac-block">
+    <h2>Спробуйте клавіатуру</h2>
+    <p>Натисніть Tab кілька разів — навколо кожного елемента з'явиться товста жовта рамка. Це фокус, і він має бути видимим завжди, а не лише в теорії.</p>
+    <div class="ac-btn-row">
+      <button class="ac-btn ac-btn--primary">Зберегти зміни</button>
+      <button class="ac-btn">Скасувати</button>
+    </div>
+  </section>
+
+  <section class="ac-block">
+    <h2>Контраст</h2>
+    <p>Текст нижче можна перемкнути на приклад заниженого контрасту — той, який часто зустрічається на дизайнерських макетах, але не проходить перевірку.</p>
+    <div class="ac-contrast" id="acContrast">
+      <p id="acContrastText">Цей текст читається легко за будь-якого освітлення й будь-якого зору.</p>
+    </div>
+    <button class="ac-btn" id="acContrastToggle">Показати поганий приклад</button>
+  </section>
+
+  <section class="ac-block">
+    <h2>Розмір цілі</h2>
+    <p>Кнопка для пальця чи миші має бути достатньо великою, щоб у неї було легко влучити — щонайменше 44 на 44 пікселі.</p>
+    <div class="ac-target-row">
+      <button class="ac-target ac-target--small" aria-label="замалий приклад">×</button>
+      <button class="ac-target ac-target--good" aria-label="достатній приклад">✓</button>
+    </div>
+  </section>
+
+</main>
+
+<footer class="ac-foot">
+  <span>06 · Доступність</span>
+  <a href="index.html">На головну</a>
+</footer>
+
+<script>
+  const btn = document.getElementById('acContrastToggle');
+  const box = document.getElementById('acContrast');
+  btn.addEventListener('click', () => {
+    box.classList.toggle('is-bad');
+    btn.textContent = box.classList.contains('is-bad') ? 'Повернути хороший приклад' : 'Показати поганий приклад';
+  });
+</script>
+
+</body>
+</html>
