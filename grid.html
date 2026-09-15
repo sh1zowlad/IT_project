@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>03 · Сітка і композиція — Граматика інтерфейсу</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="grid.css">
+</head>
+<body>
+
+<div class="masthead">
+  <a class="masthead-back" href="index.html">До каталогу</a>
+  <div class="masthead-title">Сітка і композиція</div>
+  <div class="masthead-date">Випуск 03</div>
+</div>
+<div class="rule rule-thick"></div>
+<div class="rule rule-thin"></div>
+
+<main class="paper">
+  <h1 class="headline">Сітка не про акуратність — вона про те, куди першим упаде погляд</h1>
+
+  <div class="columns">
+    <p class="dropcap">Сітка — це домовленість, а не клітка. Дванадцять колонок дають місце для великого й малого одночасно: заголовок може зайняти вісім колонок, ілюстрація — чотири, і композиція вже не симетрична, а жива. Симетрія заспокоює, але асиметрія веде погляд туди, куди потрібно редактору.</p>
+    <p>Найстаріший приклад дисциплінованої сітки — саме газетна шпальта. Колонки фіксованої ширини, лінійки між ними, чіткий регістр заголовків за розміром важливості новини. Ці правила не застаріли: вони просто переїхали з паперу на екран, де сітка стала ще гнучкішою завдяки CSS Grid і Flexbox.</p>
+    <p>Правило, яке варто запам'ятати: нумерація й порядок доречні лише тоді, коли контент справді послідовний — крок за кроком, день за днем. Якщо це не список кроків, а набір рівноправних ідей, нумерація тільки бреше про ієрархію, якої немає.</p>
+  </div>
+
+  <div class="grid-demo">
+    <div class="demo-col demo-col--wide">Заголовок і лід — 8 колонок</div>
+    <div class="demo-col">Бічна колонка — 4 колонки</div>
+  </div>
+  <p class="caption">Приклад: великий блок ліворуч і менший праворуч — та сама асиметрія, що й у цьому випуску.</p>
+</main>
+
+<div class="rule rule-thin"></div>
+<footer class="paper-foot">
+  <span>03 · Сітка і композиція</span>
+  <a href="space.html">Далі: Простір</a>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>05 · Рух — Граматика інтерфейсу</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="motion.css">
+</head>
+<body>
+
+<nav class="mo-nav"><a href="index.html">До каталогу</a></nav>
+
+<header class="mo-head" id="moHead">
+  <div class="mo-cursor" id="moCursor"></div>
+  <h1>Рух виправданий лише тоді, коли відповідає на дію людини</h1>
+  <p>Порухайте курсором по цій області. Далі — плашки, які реагують тільки на наведення, і перемикач, який показує різницю між різким і плавним переходом.</p>
+</header>
+
+<main class="mo-main">
+
+  <section class="mo-block">
+    <h2>Наведення</h2>
+    <div class="mo-row">
+      <div class="mo-chip">Зберегти</div>
+      <div class="mo-chip">Надіслати</div>
+      <div class="mo-chip">Видалити</div>
+    </div>
+  </section>
+
+  <section class="mo-block">
+    <h2>Різкий vs плавний перехід</h2>
+    <div class="mo-row">
+      <button class="mo-toggle" id="moToggleA">Перемкнути (лінійно)</button>
+      <div class="mo-track"><div class="mo-dot" id="moDotA"></div></div>
+    </div>
+    <div class="mo-row">
+      <button class="mo-toggle" id="moToggleB">Перемкнути (з пружністю)</button>
+      <div class="mo-track"><div class="mo-dot mo-dot--spring" id="moDotB"></div></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="mo-foot">
+  <span>05 · Рух</span>
+  <a href="access.html">Далі: Доступність</a>
+</footer>
+
+<script>
+  const head = document.getElementById('moHead');
+  const cursor = document.getElementById('moCursor');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let mx = 0, my = 0, cx = 0, cy = 0;
+
+  if (!reduceMotion) {
+    head.addEventListener('pointermove', (e) => {
+      const r = head.getBoundingClientRect();
+      mx = e.clientX - r.left;
+      my = e.clientY - r.top;
+    });
+    (function loop(){
+      cx += (mx - cx) * 0.12;
+      cy += (my - cy) * 0.12;
+      cursor.style.transform = 'translate(' + (cx - 90) + 'px,' + (cy - 90) + 'px)';
+      requestAnimationFrame(loop);
+    })();
+  }
+
+  function makeToggle(btnId, dotId){
+    const btn = document.getElementById(btnId);
+    const dot = document.getElementById(dotId);
+    btn.addEventListener('click', () => dot.classList.toggle('is-right'));
+  }
+  makeToggle('moToggleA', 'moDotA');
+  makeToggle('moToggleB', 'moDotB');
+</script>
+
+</body>
+</html>

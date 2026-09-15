@@ -1,0 +1,107 @@
+:root{
+  --cream: #f7f3ec;
+  --ink: #2b211c;
+  --ink-soft: #6b5d52;
+  --burgundy: #7a2e2e;
+  --line: #ddd2c2;
+}
+*{ box-sizing: border-box; }
+body{
+  margin:0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+}
+a{ color: var(--burgundy); }
+:focus-visible{ outline: 2px solid var(--burgundy); outline-offset: 3px; }
+
+.top-nav{
+  padding: 1.6rem 2rem 0;
+  font-size: 0.85rem;
+}
+.top-nav a{ text-decoration: none; }
+
+.page-head{
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 2rem 4rem;
+}
+.page-eyebrow{
+  font-size: 0.85rem;
+  color: var(--burgundy);
+  margin: 0 0 1rem;
+}
+.page-title{
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
+  line-height: 1.2;
+  margin: 0;
+}
+
+.content{
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+}
+
+.specimen{
+  text-align: center;
+  padding: 2rem 0 4rem;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 3rem;
+}
+.specimen-word{
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: clamp(6rem, 22vw, 11rem);
+  margin: 0;
+  line-height: 0.9;
+}
+.specimen-caption{
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+  max-width: 40ch;
+  margin: 1.5rem auto 0;
+}
+
+.block{ margin-bottom: 3.5rem; }
+.block h2{
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 0 0 1rem;
+}
+.block p{ color: var(--ink-soft); margin: 0 0 1em; }
+
+.pull-quote{
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--ink);
+  border-left: 2px solid var(--burgundy);
+  padding-left: 1.2rem;
+  margin: 1.5rem 0;
+}
+
+.scale-row{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-top: 1px solid var(--line);
+  padding: 0.9rem 0;
+}
+.scale-row:last-child{ border-bottom: 1px solid var(--line); }
+.scale-meta{ font-size: 0.8rem; color: var(--ink-soft); }
+
+.page-foot{
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 2rem 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+}
+.page-foot a{ text-decoration: none; font-weight: 500; }
